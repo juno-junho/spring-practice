@@ -1,0 +1,8 @@
+package com.luv2code.hibernate.demo;
+
+public class Fruit implements Fruits{
+	public static void main(String[] args) {
+		System.out.println(APPLE);
+	}
+
+}

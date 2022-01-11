@@ -1,0 +1,24 @@
+package com.luv2code.hibernate.demo;
+
+//enum fruits {APPLE, BANANA, ORANGE}
+
+public class EnumTest2 {
+	public static final int APPLE = 1;
+	public static final int BANANA = 2;
+	public static final int ORANGE = 3;
+	
+	public static void main(String[] args) {
+		int type = APPLE;
+		switch (type) {
+		case APPLE:
+			System.out.println("32 kcal");
+			break;
+		 case BANANA:
+             System.out.println("52 kcal");
+             break;
+         case ORANGE:
+             System.out.println("16 kcal");
+             break;
+		}
+	}
+}

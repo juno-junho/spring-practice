@@ -1,0 +1,24 @@
+package com.luv2code.hibernate.demo;
+
+public enum RegularPolygon {
+	TRIANGLE(3), SQUARE(4), PENTAGON(5), HEXAGON(6);
+	
+	private int sides;
+
+	public int getSides() {
+		return sides;
+	}
+	public void setSides(int sides) {
+		this.sides = sides;
+	}
+
+
+	private RegularPolygon(int sides) {
+		
+		}
+	
+	public static void main(String[] args) {
+		Enum reEnum = RegularPolygon.TRIANGLE;
+		System.out.println(reEnum.toString());
+	}
+	}

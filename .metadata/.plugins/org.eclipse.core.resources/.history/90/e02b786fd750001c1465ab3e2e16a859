@@ -1,0 +1,25 @@
+package com.luv2code.hibernate.demo;
+
+public enum RegularPolygon {
+	TRIANGLE(), SQUARE(), PENTAGON(), HEXAGON();
+	
+	
+	private int[] arr;
+	
+	public int[] getArr() {
+		return arr;
+	}
+
+	public void setArr(int[] arr) {
+		this.arr = arr;
+	}
+
+	private RegularPolygon(int[] arr) {
+		this.arr = arr;
+	}
+
+	public static void main(String[] args) {
+	
+		
+	}
+	}
