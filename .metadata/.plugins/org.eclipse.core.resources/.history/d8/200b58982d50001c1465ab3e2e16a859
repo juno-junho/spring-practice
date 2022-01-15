@@ -1,7 +1,0 @@
-package com.luv2code.hibernate.demo;
-
-public interface Fruits {
-	Fruit APPLE = 1, BANANA = 2, ORANGE = 3;
-}
-
-
