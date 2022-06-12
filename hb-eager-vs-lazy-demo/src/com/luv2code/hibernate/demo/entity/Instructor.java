@@ -51,7 +51,7 @@ public class Instructor {
 	@JoinColumn(name="instructor_detail_id")
 	public InstructorDetail instructorDetail;
 	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="instructor", cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="instructor", cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private List<Course> courses;
 	
 	public Instructor() {
@@ -117,7 +117,6 @@ public class Instructor {
 		this.courses = courses;
 	}
 	
-	// add convenience methods for bi-directional relationship
 	public void add(Course tempCourse) {
 		if(courses ==null) {
 			courses = new ArrayList<>();

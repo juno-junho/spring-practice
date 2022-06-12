@@ -1,7 +1,5 @@
 package com.luv2code.hibernate.demo;
 
-import javax.sound.midi.Soundbank;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -35,15 +33,23 @@ public class EagerLazyDemo {
 			int theId = 1;
 			Instructor tempInstructor = session.get(Instructor.class, theId);
 			
-			System.out.println("luv2code: Instructor : " + tempInstructor);
-			
-			// get course for the instructor
-			System.out.println("luv2code: Courses : " + tempInstructor.getCourses());
+			System.out.println("Luv2code : Instructor : " + tempInstructor);
+		
 			
 			// commit transaction
 			session.getTransaction().commit();
 			
-			System.out.println("luv2code: Done!");
+			// Close the session.
+			session.close();
+			
+			System.out.println("\nluv2code : the session is now closed!\n");
+			
+			// since courses are lazy loaded ... this should fail
+				
+			// get course for the instructor
+			System.out.println("Luv2code : Courses : " + tempInstructor.getCourses());
+			
+			System.out.println("Luv2code : Done!");
 			
 		} finally {
 			//add clean up code
