@@ -1,3 +1,5 @@
 INDEX VERSION 1.131
 C:\Users\ssmm0\OneDrive - chauniv.ac.kr\πŸ≈¡ »≠∏È\Spring\Spring & Hibernate\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\237508677.index
 \spring-mvc-demo\src
+C:\Users\ssmm0\OneDrive - chauniv.ac.kr\πŸ≈¡ »≠∏È\Spring\Spring & Hibernate\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\715998994.index
+\mycoolwebapp\src\main\resources
