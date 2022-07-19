@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.luv2code.hibernate.demo.companies"/>
-<fullyQualifiedTypeName name="com.luv2code.hibernate.demo.Fruit"/>
-<fullyQualifiedTypeName name="java.util.EnumSet"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="org.hibernate.property.access.spi.Getter"/>
-<fullyQualifiedTypeName name="java.awt.Shape"/>
-<fullyQualifiedTypeName name="com.luv2code.hibernate.demo.RegularPolygon"/>
-<fullyQualifiedTypeName name="com.luv2code.hibernate.demo.Season"/>
-<fullyQualifiedTypeName name="org.hibernate.query.Query"/>
-<fullyQualifiedTypeName name="com.luv2code.hibernate.demo.entity.Instructor"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
-<fullyQualifiedTypeName name="javax.persistence.Table"/>
 <fullyQualifiedTypeName name="javax.annotation.Generated"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
@@ -27,13 +14,10 @@
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
 <fullyQualifiedTypeName name="com.luv2code.hibernate.demo.entity.Course"/>
 <fullyQualifiedTypeName name="com.luv2code.hibernate.demo.entity.Student"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.EnableAspectJAutoProxy"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
 <fullyQualifiedTypeName name="com.luv2code.aopdemo.DemoConfig"/>
 <fullyQualifiedTypeName name="com.luv2code.aopdemo.dao.AccountDAO"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
 <fullyQualifiedTypeName name="com.luv2code.aopdemo.dao.MembershipDAO"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Pointcut"/>
@@ -60,4 +44,20 @@
 <fullyQualifiedTypeName name="com.luv2code.aopdemo.AroundWithLoggerDemoApp"/>
 <fullyQualifiedTypeName name="java.util.logging.Logger"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.EnableWebMvc"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.ViewResolver"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="com.luv2code.springsecurity.demo.config.DemoAppConfig"/>
+<fullyQualifiedTypeName name="org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
+<fullyQualifiedTypeName name="org.springframework.security.core.userdetails.User.UserBuilder"/>
+<fullyQualifiedTypeName name="org.springframework.security.core.userdetails.User"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.WebMvcConfigurer"/>
 </qualifiedTypeNameHistroy>
