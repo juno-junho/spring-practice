@@ -16,7 +16,7 @@ public class StudentRestExceptionHandler {
 	@ExceptionHandler
 	public ResponseEntity<StudentErrorResponse> handlingException(StudentNotFoundException exc){
 		
-		// create a StudentErrorResponse
+		// create a Stud entErrorResponse
 		
 		StudentErrorResponse error = new StudentErrorResponse();
 		error.setStatus(HttpStatus.NOT_FOUND.value()); // 404  
