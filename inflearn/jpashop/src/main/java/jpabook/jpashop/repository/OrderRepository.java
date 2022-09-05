@@ -92,6 +92,4 @@ public class OrderRepository {
         return query.getResultList();
     }
     // 정답은 querydsl로 작성하기 -> 개발을 깔끔하게 할 수 있음.
-
-
 }
