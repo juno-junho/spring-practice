@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 
 @Embeddable //내장타입
 @Getter
-@AllArgsConstructor
 public class Address {
 
     protected Address(){
@@ -17,5 +17,10 @@ public class Address {
     private String street;
     private String zipcode;
 
+    public Address(String city, String street, String zipcode) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
 
 }

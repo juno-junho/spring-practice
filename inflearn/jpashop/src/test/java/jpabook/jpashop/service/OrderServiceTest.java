@@ -77,10 +77,7 @@ class OrderServiceTest {
         assertEquals(10L, item.getStockQuantity(), "주문 취소된 상품은 그만큼 재고가 증가해야 한다.");
     }
     private Book createBook(String name, int price, int stockQuantity) {
-        Book book = new Book();
-        book.setName(name);
-        book.setPrice(price);
-        book.setStockQuantity(stockQuantity);
+        Book book = Book.createBook(name,price,stockQuantity);
         em.persist(book);
         return book;
     }
@@ -92,5 +89,4 @@ class OrderServiceTest {
         em.persist(member);
         return member;
     }
-
 }
