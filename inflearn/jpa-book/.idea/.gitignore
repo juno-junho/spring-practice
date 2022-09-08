@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../:\Users\ssmm0\OneDrive - chauniv.ac.kr\바탕 화면\Spring\Spring & Hibernate\workspace\inflearn\jpa-book\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
