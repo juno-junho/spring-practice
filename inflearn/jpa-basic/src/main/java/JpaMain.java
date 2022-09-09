@@ -2,6 +2,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -44,6 +45,30 @@ public class JpaMain {
 //            System.out.println("2=============================");
 //            tx.commit();
 //            System.out.println("3=============================");
+
+            // 저장
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setName("member1");
+//            member.setTeam(team);
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Member findMember = em.find(Member.class, member.getId());
+////            Team findTeam = findMember.getTeam();
+//            // 양방향 연관관계
+//            List<Member> members = findMember.getTeam().getMembers();
+//            for (Member m : members) {
+//                System.out.println("m.getName() = " + m.getName());
+//            }
+            
+
+//            tx.commit();
         } catch (Exception e) {
             tx.rollback();
         } finally {
