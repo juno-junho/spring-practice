@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Team {
+public class Team extends BaseEntity {
 
     @Id
     @GeneratedValue
@@ -16,7 +16,7 @@ public class Team {
 
     public void addMember(Member member) {
         member.setTeam(this);
-        members.add(member);   
+        members.add(member);
     }
 
     public List<Member> getMembers() {
