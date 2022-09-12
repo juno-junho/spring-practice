@@ -14,24 +14,17 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+            Address address = new Address("city", "street", "10000");
 
-//            Movie movie = new Movie();
-//            movie.setDirector("AAA");
-//            movie.setActor("BBB");
-//            movie.setName("바람과 함께 사라지다");
-//            movie.setPrice(12000);
-//
-//            em.persist(movie);
-//            em.flush();
-//            em.clear();
-//
-//            Movie findMovie = em.find(Movie.class, movie.getId());
-//            System.out.println("findMovie = " + findMovie);
-//            System.out.println("====================");
+
             Member member = new Member();
-            member.setCreatedBy("kim");
-            member.setCreatedDate(LocalDateTime.now());
+            member.setName("member1");
+            member.setHomeAddress(address);
+            em.persist(member);
 
+            Member member2 = new Member();
+            member.setName("member2");
+            member.setHomeAddress(address);
             em.persist(member);
 
             tx.commit();
