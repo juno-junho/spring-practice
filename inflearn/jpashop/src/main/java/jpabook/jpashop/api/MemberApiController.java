@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
+import java.util.stream.Collectors;
 
 //@Controller @ResponseBody
 @RestController
@@ -17,6 +19,33 @@ public class MemberApiController {
 
     private final MemberService memberService;
 
+    @GetMapping("/api/v1/members")
+    public List<Member> membersV1(){
+        return memberService.findMembers();
+    }
+
+    @GetMapping("/api/v2/members")
+    public Result membersV2(){
+        List<Member> findMembers = memberService.findMembers();
+        List<MemberDto> collect = findMembers.stream()
+                .map(m -> new MemberDto(m.getName()))
+                .collect(Collectors.toList());
+
+
+        return new Result(collect.size(),collect);
+    }
+
+    @Data
+    @AllArgsConstructor
+    static class MemberDto {
+        private String name;
+    }
+    @Data
+    @AllArgsConstructor
+    static class Result<T>{
+        private int count;
+        private T data;
+    }
     // @Valid가 Member entity에 붙어있는   validation 검증함.
     @PostMapping("/api/v1/members") // 회원 등록
     public CreateMemberResponse saveMemberV1(@RequestBody @Valid Member member) {
@@ -43,7 +72,9 @@ public class MemberApiController {
         return new UpdateMemberResponse(findMember.getId(), findMember.getName());
     }
 
+    // 아래 클래스 들은 모두 DTO
     @Data
+    @AllArgsConstructor
     static class UpdateMemberRequest {
         private String name;
     }
@@ -56,8 +87,8 @@ public class MemberApiController {
     }
 
     @Data
-    // dto 객체
-    static class CreateMemberRequest {
+     // dto 객체
+     static class CreateMemberRequest {
         @NotEmpty
         private String name;
     }
