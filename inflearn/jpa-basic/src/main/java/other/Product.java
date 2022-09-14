@@ -1,3 +1,7 @@
+package other;
+
+import other.Member;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

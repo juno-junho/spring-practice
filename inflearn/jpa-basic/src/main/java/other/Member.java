@@ -1,3 +1,5 @@
+package other;
+
 import javax.persistence.*;
 import javax.xml.namespace.QName;
 import java.util.*;
@@ -86,7 +88,7 @@ public class Member extends BaseEntity {
     }
     //
 //    @Enumerated(EnumType.STRING)
-//    private RoleType roleType;
+//    private other.RoleType roleType;
 //
 //    @Temporal(TemporalType.TIMESTAMP)
 //    private Date createdDate;
@@ -97,6 +99,6 @@ public class Member extends BaseEntity {
 //    @Lob
 //    private String description;
 //
-//    public Member() {
+//    public other.Member() {
 //    }
 }

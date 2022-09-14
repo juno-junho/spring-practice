@@ -1,3 +1,5 @@
+package other;
+
 import javax.persistence.Embeddable;
 import java.time.LocalDateTime;
 
