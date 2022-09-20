@@ -31,7 +31,9 @@ public class ReqestParamServlet extends HttpServlet {
 
         System.out.println("[이름이 같은 복수 파라미터 조회]");
         String[] usernames = request.getParameterValues("username");
-        Arrays.stream(usernames).forEach(name -> System.out.println("username = " + name));
+        for (String name : usernames) {
+            System.out.println("username = " + name);
+        }
 
         response.getWriter().write("OK");
     }
