@@ -14,7 +14,7 @@
     <th>age</th>
     </thead>
     <tbody>
-    <c:forEach var="items" items="${members}">
+    <c:forEach var="item" items="${members}">
         <tr>
             <td>${item.id}</td>
             <td>${item.username}</td>
