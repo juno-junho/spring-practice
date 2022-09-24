@@ -68,5 +68,4 @@ public class RequestBodyJsonController {
         log.info("username={}, age={}", helloData.getUsername(), helloData.getAge());
         return helloData;
     }
-
 }
