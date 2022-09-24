@@ -1,4 +1,4 @@
-/.metadata/
-/.recommenders/
+.recommenders/
 .metadata/
-/.metadata
+.idea/
+.mvn/wrapper/
