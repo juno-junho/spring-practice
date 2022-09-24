@@ -38,7 +38,7 @@ public class RequestBodyStringController {
 
     @PostMapping("/request-body-string-v3")
     // HttpEntity로 받기
-    public HttpEntity<String> requestBodyStringV3(HttpEntity<String> httpEntityㅅㅁ) throws IOException {
+    public HttpEntity<String> requestBodyStringV3(HttpEntity<String> httpEntity) throws IOException {
         String messageBody = httpEntity.getBody();
         log.info("messageBody={}", messageBody);
         return new HttpEntity<>("ok");
