@@ -2,11 +2,12 @@ package jpabook.jpashop.service;
 
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.transaction.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -54,7 +55,7 @@ class MemberServiceTest {
 //        //then
 //        Assertions.fail("예외가 발생해야 한다."); //코드가 여기 오면 안된다. (예외 발생하지 않으면 test fail 되게)
 
-     // then
+     // thenf
         IllegalStateException thrown = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
         assertEquals("이미 존재하는 회원입니다.", thrown.getMessage());
 
