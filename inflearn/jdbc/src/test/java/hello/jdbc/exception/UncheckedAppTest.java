@@ -56,7 +56,7 @@ public class UncheckedAppTest {
             try {
                 runSQL();
             } catch (SQLException e) { // 호출하면 둘다 출력됨
-                throw new RuntimeSQLException();
+                throw new RuntimeSQLException(e);
             }
         }
 
@@ -72,9 +72,6 @@ public class UncheckedAppTest {
     }
 
     static class RuntimeSQLException extends RuntimeException {
-        public RuntimeSQLException() {
-        }
-
         public RuntimeSQLException(Throwable cause) {
             super(cause);
         }
