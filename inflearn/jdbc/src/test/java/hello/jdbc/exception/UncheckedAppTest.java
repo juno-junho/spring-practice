@@ -16,6 +16,17 @@ public class UncheckedAppTest {
                 .isInstanceOf(RuntimeSQLException.class);
     }
 
+    @Test
+    void printEX() {
+        Controller controller = new Controller();
+
+        try {
+            controller.request();
+        } catch (Exception e) {
+//           e.printStackTrace();   // 좋지 않다
+            log.info("ex", e);
+        }
+    }
     static class Controller {
         Service service = new Service();
 
@@ -45,7 +56,7 @@ public class UncheckedAppTest {
             try {
                 runSQL();
             } catch (SQLException e) { // 호출하면 둘다 출력됨
-                throw new RuntimeSQLException(e);
+                throw new RuntimeSQLException();
             }
         }
 
@@ -61,6 +72,9 @@ public class UncheckedAppTest {
     }
 
     static class RuntimeSQLException extends RuntimeException {
+        public RuntimeSQLException() {
+        }
+
         public RuntimeSQLException(Throwable cause) {
             super(cause);
         }
