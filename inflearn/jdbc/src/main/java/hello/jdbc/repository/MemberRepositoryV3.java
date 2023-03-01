@@ -136,5 +136,4 @@ public class MemberRepositoryV3 {
 
         return conn;
     }
-
 }

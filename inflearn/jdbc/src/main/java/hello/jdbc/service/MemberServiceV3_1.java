@@ -23,7 +23,7 @@ public class MemberServiceV3_1 {
     private final MemberRepositoryV3 memberRepository;
 
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
-//        Connection con = dataSource.getConnection();
+//        Connection con = dataSource.getConnection();  // TransactionManger에서 내부적으로 datasource 사용해서 생성함.
         // 트랜잭션 시작 // 트랜잭션 관련 속성들을 넣어줘야함.
         TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
 

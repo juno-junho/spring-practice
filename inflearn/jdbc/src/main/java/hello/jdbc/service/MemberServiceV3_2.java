@@ -29,7 +29,7 @@ public class MemberServiceV3_2 {
 
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
 
-        txTemplate.executeWithoutResult((status) -> {
+        txTemplate.executeWithoutResult((status) -> {   //응답값이 없을 때 사용한다.
             try {
                 bizLogic(fromId, toId, money);
             } catch (SQLException e) {

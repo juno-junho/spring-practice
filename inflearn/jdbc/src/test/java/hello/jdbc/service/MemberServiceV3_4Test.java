@@ -2,11 +2,9 @@ package hello.jdbc.service;
 
 import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepositoryV3;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
@@ -14,21 +12,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
-import static hello.jdbc.connection.ConnectionConst.*;
-
 /**
- * 트랜잭션 - @Transactional AOP
+ * 트랜잭션 - DataSource, transactionManager 자동 등록
  */
 @Slf4j
 @SpringBootTest //  spring을 하나 띄운다.의존관계 주입 다 받는다.
-class MemberServiceV3_3Test {
+class MemberServiceV3_4Test {
     public static final String MEMBER_A = "memberA";
     public static final String MEMBER_B = "memberB";
     public static final String MEMBER_EX = "ex";
@@ -40,7 +33,7 @@ class MemberServiceV3_3Test {
 
     @TestConfiguration
     static class TestConfig { // proxy에서 다 가져다 쓰게됨
-        @Bean
+    /*    @Bean
         DataSource dataSource() {
             return new DriverManagerDataSource(URL, USERNAME, PASSWORD);
         }
@@ -48,11 +41,19 @@ class MemberServiceV3_3Test {
         @Bean
         PlatformTransactionManager transactionManager() {   // proxy에서 필요함. 주입받아 쓴다.
             return new DataSourceTransactionManager(dataSource());
+        }*/
+
+        private final DataSource dataSource;
+
+        // 생성자 주입
+        TestConfig(DataSource dataSource) {
+            this.dataSource = dataSource;
         }
+
 
         @Bean
         MemberRepositoryV3 memberRepositoryV3() {
-            return new MemberRepositoryV3(dataSource());
+            return new MemberRepositoryV3(dataSource);
         }
 
         @Bean
