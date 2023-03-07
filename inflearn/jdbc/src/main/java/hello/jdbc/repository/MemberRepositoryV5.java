@@ -59,17 +59,7 @@ public class MemberRepositoryV5 implements MemberRepository {
 
             rs = pstmt.executeQuery();
             if (rs.next()) {
-                Member member = new Member();
-                member.setMemberId(rs.getString("member_id"));
-                member.setMoney(rs.getInt("money"));
-                return member;
-            } else {
-                throw new NoSuchElementException("member not found memberId=" + memberId);
-            }
-        } catch (SQLException e) {
-            throw exTranslator.translate("findById", sql, e);
-        } finally {
-            close(conn, pstmt, rs);
+                Member member = new Member(); lose(conn, pstmt, rs);
         }*/
     }
     private RowMapper<Member> memberRowMapper() {
