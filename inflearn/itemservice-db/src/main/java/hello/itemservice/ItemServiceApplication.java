@@ -29,7 +29,7 @@ public class ItemServiceApplication {
 		return new TestDataInit(itemRepository);
 	}
 
-	@Bean
+/*	@Bean
 	@Profile("test")
 	public DataSource dataSource() {
 		log.info("메모리 데이터베이스 초기화");
@@ -39,7 +39,7 @@ public class ItemServiceApplication {
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
 		return dataSource;
-	}
+	}*/
 /**
  * NamedParameterJdbcTemplate 사용 권장하긴 하지만 간단간단한것 일때는 JdbcTemplate 사용해도 되지만 순서 조심해야한다.
  */
