@@ -114,9 +114,12 @@ public class BasicTxTest {
     void inner_rollback() {
         log.info("외부 트랜잭션 시작");
         TransactionStatus outer = txManager.getTransaction(new DefaultTransactionAttribute());
+        log.info("outer txManager={}", txManager);
 
         log.info("내부 트랜잭션 시작");
         TransactionStatus inner = txManager.getTransaction(new DefaultTransactionAttribute());
+        log.info("inner txManager={}", txManager);
+
         log.info("내부 트랜잭션 롤백");
         txManager.rollback(inner);  // rollback-only 표시
 
