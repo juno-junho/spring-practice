@@ -13,14 +13,13 @@ public class JpaMain {
         EntityManager em = emf.createEntityManager();
 
         EntityTransaction tx = em.getTransaction();
+
         tx.begin();
         try {
             List<Member> result = em.createQuery("select m From Member as m where m.name like '%kim%'", Member.class).getResultList();
             for (Member member : result) {
                 System.out.println("member = " + member);
             }
-
-
             tx.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -29,6 +28,5 @@ public class JpaMain {
             em.close();
         }
         emf.close();
-
     }
 }
