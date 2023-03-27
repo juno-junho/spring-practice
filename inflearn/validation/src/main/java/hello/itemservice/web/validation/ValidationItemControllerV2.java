@@ -10,6 +10,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -163,6 +164,8 @@ public class ValidationItemControllerV2 {
 
         log.info("objectName={}", bindingResult.getObjectName());
         log.info("target={}", bindingResult.getTarget());
+
+//        ValidationUtils.rejectIfEmptyOrWhitespace(bindingResult, "itemName", "required");
 
         // 검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
