@@ -1,37 +1,35 @@
-package jpabook.jpashop.service;
+package jpabook.jpashop.service.refactored;
+
 
 import jpabook.jpashop.domain.Delivery;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
 import jpabook.jpashop.domain.item.Item;
-import jpabook.jpashop.repository.ItemRepository;
-import jpabook.jpashop.repository.MemberRepository;
-import jpabook.jpashop.repository.OrderRepository;
-import jpabook.jpashop.repository.OrderSearch;
+
+import jpabook.jpashop.repository.refactored.ItemRepositoryRefactored;
+import jpabook.jpashop.repository.refactored.MemberRepositoryRefactored;
+import jpabook.jpashop.repository.refactored.OrderRepositoryRefactored;
+import jpabook.jpashop.repository.refactored.OrderSearch;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Primary
-@Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class OrderService {
 
-    private final OrderRepository orderRepository;
-    private final MemberRepository memberRepository;
-    private final ItemRepository itemRepository;
+    private final OrderRepositoryRefactored orderRepository;
+    private final MemberRepositoryRefactored memberRepository;
+    private final ItemRepositoryRefactored itemRepository;
 
     // 주문
     @Transactional//변경하는것이기때문
     public Long order(Long memberId, Long itemId, int count) {
         // 주문할때 member의 id, item의 id, 수량 넘어옴
-        Member member = memberRepository.findOne(memberId);
-        Item item = itemRepository.findOne(itemId);
+        Member member = memberRepository.findById(memberId).orElseThrow();
+        Item item = itemRepository.findById(itemId).orElseThrow();
 
         // 배송정보 생성 (회원에 있는 address 넣기) 실제로는 배송지 정보 따로 입력.
         Delivery delivery = new Delivery();
@@ -51,7 +49,7 @@ public class OrderService {
     @Transactional
     public void cancelOrder(Long orderId) {
         // 주문 엔티티 조회
-        Order order = orderRepository.findOne(orderId);
+        Order order = orderRepository.findById(orderId).orElseThrow();
         // 주문 취소
         order.cancel(); // jpa의 엄청 큰 장점 : entity안에데이터만 바꿔주면 jpa가 알아서 변경 포인트들을 dirty checking(변경된 감지)
         // 해서 변경된 내역들을 찾아서 db에 update 쿼리 다 날라감.
@@ -59,6 +57,6 @@ public class OrderService {
 
     // 검색
     public List<Order> findOrders(OrderSearch orderSearch) {
-        return orderRepository.findAllByString(orderSearch);
+        return orderRepository.findAll(orderSearch.toSpecification());
     }
 }
